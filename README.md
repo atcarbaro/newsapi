@@ -1,50 +1,88 @@
-# React + TypeScript + Vite
+# NewsApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application for displaying news articles. The project uses TypeScript, MobX for state management, and React Router for navigation.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a React application for displaying news articles. The project uses TypeScript, MobX for state management, and React Router for navigation.
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Make sure you have the following installed on your machine:
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (>= 14.x)
+- npm (>= 6.x)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository:
+
+```sh
+git clone https://github.com/your-username/newsapp.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Navigate to the project directory:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+cd newsapp
 ```
+
+3. Install the dependencies:
+
+```sh
+npm install
+```
+
+4. To start the development server, run:
+
+```sh
+npm run dev
+```
+
+5. To run the unit tests using Jest, run:
+
+```sh
+npm run test
+```
+
+## Project Structure
+
+```
+newsapp/
+├── src/
+│   ├── components/
+│   │   ├── NewsCard/
+│   │   │   ├── NewsCard.tsx
+│   │   │   ├── NewsCard.styles.ts
+│   │   │   └── **tests**/
+│   │   │       └── NewsCard.test.tsx
+│   │   ├── NewsGrid/
+│   │   │   ├── NewsGrid.tsx
+│   │   │   └── **tests**/
+│   │   │       └── NewsGrid.test.tsx
+│   │   ├── SearchBox/
+│   │   │   ├── SearchBox.tsx
+│   │   │   └── **tests**/
+│   │   │       └── SearchBox.test.tsx
+│   ├── pages/
+│   │   ├── Details.tsx
+│   │   └── **tests**/
+│   │       └── Details.test.tsx
+│   ├── stores/
+│   │   └── newsStore.ts
+│   ├── utils/
+│   │   └── slugify.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── theme.ts
+├── .gitignore
+├── jest.config.ts
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+Make sure you have the following installed on your machine:
+
+- Node.js (>= 14.x)
+- npm (>= 6.x)
